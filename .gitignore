@@ -1,0 +1,5 @@
+# Eclipse IDE
+.classpath
+.project
+/.settings/
+/bin/
