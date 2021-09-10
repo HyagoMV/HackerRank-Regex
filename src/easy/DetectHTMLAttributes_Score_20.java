@@ -14,16 +14,16 @@ public class DetectHTMLAttributes_Score_20 {
 		try (var scanner = new Scanner(new File("DetectHTMLAttributes_Score_20_STC1"))) {
 			scanner.nextLine();
 			var map = new HashMap<String, TreeSet<String>>();
-			scanner.findAll("(<\\w+)|( \\w+(?==))").forEach(r -> {
-				if (r.group().contains("<")) {
-					var key = r.group().replaceAll("<", "");
+			scanner.findAll("<(\\w+)|\\s+(\\w+)=").forEach(r -> {
+				if (r.group(1) != null) {
+					var key = r.group(1);
 					if (!map.containsKey(key)) {
 						var ts = new TreeSet<String>();
 						map.put(key, ts);
 					}
 					lastKey = key;
 				} else {
-					var value = r.group().replaceAll(" ", "");
+					var value = r.group(2);
 					map.get(lastKey).add(value);
 				}			
 			});
