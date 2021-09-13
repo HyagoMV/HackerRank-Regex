@@ -1,10 +1,10 @@
-package s;
+package medium;
 
 import java.io.FileInputStream;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class BuildingaSmartIDE_ProgrammingLanguageDetection {
+public class Buildinga_Smart_IDE_Programming_Language_Detection_Score_30 {
 
 	public static void main(String[] args) {
 		try {

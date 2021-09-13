@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class FindAWord_Score_15 {
+public class Find_A_Word_Score_15 {
 
 	public static void main(String[] args) {
 		try(var scanner = new Scanner(new File("FindAWord_Score_15_TC1"))) {

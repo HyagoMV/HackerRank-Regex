@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.TreeSet;
 
-public class DetectTheDomainName_Score_15 {
+public class Detect_The_Domain_Name_Score_15 {
 
 	public static void main(String[] args) {
 		try(var scanner = new Scanner(new File("DetectTheDomainName_Score_15_TC2"))){

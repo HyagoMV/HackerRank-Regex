@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.TreeSet;
 
 
-public class DetectTheEmailAddresses_Score_15 {
+public class Detect_The_Email_Addresses_Score_15 {
 	static String e = "";
 	public static void main(String[] args) {
 		try (var scanner = new Scanner(new File("DetectTheEmailAddresses_Score_15_STC1"))) {

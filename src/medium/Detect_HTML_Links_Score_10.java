@@ -1,4 +1,4 @@
-package easy;
+package medium;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
