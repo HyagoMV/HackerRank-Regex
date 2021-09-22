@@ -8,31 +8,24 @@ public class Buildinga_Smart_IDE_Programming_Language_Detection_Score_30 {
 
 	public static void main(String[] args) {
 		try {
-			System.setIn(new FileInputStream("BuildingaSmartIDE_ProgrammingLanguageDetection-STC1-part2"));
+			System.setIn(new FileInputStream("BuildingaSmartIDE_ProgrammingLanguageDetection-STC0"));
 
 			try (var s = new Scanner(System.in)) {
-				var cP = Pattern.compile("^#include\\s*[<\\\"].+[>\\\"]");
-				var javaP = Pattern.compile("^\\s*((package)|(import))\\s+[\\w\\.\\*]+\\s*;$");
-				var phytonP = Pattern.compile("^((from\\s+[\\w\\.]+\\s+)(import\\s+[\\w\\.]+)(\\s+as\\s+[\\w\\.]+)?|(#.*)|(def\\s.*\\(.*\\):))$");
-				
 				while (s.hasNextLine()) {
-					var line = s.nextLine();
-					var cM = cP.matcher(line);
-					var javaM = javaP.matcher(line);
-					var phytonM = phytonP.matcher(line);
-					
-					if (cM.find()) {
-						System.out.println("C");
-						return;
-					}
-					if (javaM.find()) {
-						System.out.println("Java");
-						return;
-					}
-					
-					if(phytonM.find()) {
-						System.out.println("Python");
-						return;
+					var matcher = Pattern.compile("(?:((?:import|package)\\s+[a-zA-z_.*]+;|\\b(?:public)\\b)|(#(?:include|define))|(\\B#|\\bdef\\b|class\\s+[a-zA-z]+:))").matcher(s.nextLine());
+					if (matcher.find()) {
+						if (matcher.group(1) != null) {							
+							System.out.println("Java");
+							return;
+						}
+						if (matcher.group(2) != null) {							
+							System.out.println("C");
+							return;
+						}
+						else {
+							System.out.println("Python");
+							return;							
+						}
 					}
 				}
 			}
